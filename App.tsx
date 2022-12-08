@@ -1,21 +1,13 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Dashboard } from "./src/screens/Dashboard";
+import { ThemeProvider } from "styled-components";
+
+import { globalTheme } from "./src/global/theme";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Luciano</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ThemeProvider theme={globalTheme}>
+      <Dashboard />
+    </ThemeProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
